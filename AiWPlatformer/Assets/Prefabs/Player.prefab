@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 95359080099519660}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,7 +81,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1727618750376968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.1, y: 0.71, z: 0}
+  m_LocalPosition: {x: 26.1, y: 1.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4542940148057692}
@@ -96,7 +96,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1698381593845866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.45, y: -0.15, z: 0}
+  m_LocalPosition: {x: 0.77, y: -0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4594558882773668}
@@ -173,6 +173,7 @@ MonoBehaviour:
     m_Bits: 256
   firePoint: {fileID: 4945569543356732}
   bullet: {fileID: 1363063639145164, guid: f5b16e386d76a5944a9a9602e9e7d543, type: 2}
+  shotDelay: 0.3
 --- !u!212 &212337471926348138
 SpriteRenderer:
   m_ObjectHideFlags: 1

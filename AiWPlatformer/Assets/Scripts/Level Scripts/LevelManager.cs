@@ -10,12 +10,13 @@ public class LevelManager : MonoBehaviour {
     public GameObject currentCheckpoint;
     public GameObject deathParticle;
     public GameObject respawnParticle;
-
+    public PlayerHealthManager healthManager;
     private playerController player;
 
 	// Use this for initialization
 	void Start () {
         player = FindObjectOfType<playerController>();
+        healthManager = FindObjectOfType<PlayerHealthManager>();
 	}
 	
 	// Update is called once per frame
@@ -34,18 +35,22 @@ public class LevelManager : MonoBehaviour {
         // wait for a delay, and then re-enable player and make visible, and create a respawn particle system.
         // Clean up the particle systems after they are used with Destroy.
         // Disable the collider so that enemies do not push the player after death.
+        // Wait a moment before respawning player
+        // Set player to full health
         // Debug.Log("Player Respawned");
         float gravitySave = player.GetComponent<Rigidbody2D>().gravityScale;
         ScoreManager.addPoints(-deathPointPenalty);
         Instantiate(deathParticle, player.transform.position, player.transform.rotation);
+        healthManager.fullHealth();
+        // Disable everything on the player
         player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         player.GetComponent<CapsuleCollider2D>().enabled = false;
         player.GetComponent<Rigidbody2D>().gravityScale = 0f;
         player.enabled = false;
         player.GetComponent<Renderer>().enabled = false;
-        yield return new WaitForSeconds(respawnDelay/2);
+        yield return new WaitForSeconds(respawnDelay);
         player.transform.position = currentCheckpoint.transform.position;
-        yield return new WaitForSeconds(respawnDelay / 2);
+        yield return new WaitForSeconds(respawnDelay);
         player.GetComponent<CapsuleCollider2D>().enabled = true;
         player.GetComponent<Rigidbody2D>().gravityScale = gravitySave;
         player.GetComponent<Renderer>().enabled = true;

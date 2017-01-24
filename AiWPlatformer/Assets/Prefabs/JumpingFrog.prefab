@@ -52,11 +52,12 @@ GameObject:
   - component: {fileID: 212680858038481928}
   - component: {fileID: 50815147244801974}
   - component: {fileID: 61622338749057440}
-  - component: {fileID: 114224536722353558}
   - component: {fileID: 95599136244359328}
   - component: {fileID: 114079862009317880}
   - component: {fileID: 70551796913409812}
   - component: {fileID: 70452153480675286}
+  - component: {fileID: 114113036759010378}
+  - component: {fileID: 114507151750803810}
   m_Layer: 0
   m_Name: JumpingFrog
   m_TagString: Enemy
@@ -207,7 +208,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   grounded: 0
---- !u!114 &114224536722353558
+--- !u!114 &114113036759010378
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -215,10 +216,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1924885967522412}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9abc6ce7a60f0c04f86844507398f13b, type: 3}
+  m_Script: {fileID: 11500000, guid: fc4f01d6b7f0c54408fb356055005119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelManager: {fileID: 0}
+  enemyHP: 3
+  deathEffect: {fileID: 1359749270378882, guid: a5cc8f01e10a9a74dace725e86c721ce,
+    type: 2}
+  pointsOnDeath: 500
+--- !u!114 &114507151750803810
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1924885967522412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e46f8f23245fac48b3154a41b750c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToGive: 1
 --- !u!212 &212680858038481928
 SpriteRenderer:
   m_ObjectHideFlags: 1

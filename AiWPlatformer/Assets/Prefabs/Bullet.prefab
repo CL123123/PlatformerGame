@@ -89,8 +89,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  projectileLifeDist: 15
-  deathEffect: {fileID: 1359749270378882, guid: a5cc8f01e10a9a74dace725e86c721ce,
+  projectileLifeDist: 25
+  damage: 1
+  bulletParticle: {fileID: 1221717583062348, guid: 9a2930d9f10508645ae16b7e92ae99e6,
     type: 2}
 --- !u!212 &212446811343400840
 SpriteRenderer:
